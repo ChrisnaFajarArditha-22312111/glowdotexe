@@ -16,7 +16,7 @@ Proyek ini dikerjakan oleh tiga orang dengan fokus **frontend, backend, dan CMS*
 | Pendaftaran mitra | Mengirim pengajuan kerja sama untuk klinik, toko, atau reseller. |
 | CMS | Mengelola katalog produk dan menindaklanjuti pengajuan mitra. |
 
-Saat ini aplikasi dapat dijalankan dalam mode demo. Katalog memakai data bawaan dan chat memakai respons berbasis kata kunci jika layanan eksternal belum dikonfigurasi. Database menggunakan Supabase; chat AI terhubung ke Anthropic saat API key tersedia.
+Frontend dan backend akan dibangun oleh penanggung jawab masing-masing. CMS sudah memiliki proyek awal Next.js untuk memulai pengembangan.
 
 ## Tim & pembagian kerja
 
@@ -28,13 +28,13 @@ Setiap anggota bertanggung jawab atas satu bagian, termasuk implementasi, integr
 | Backend | API, database, validasi data, autentikasi, dan integrasi layanan. | `backend/` |
 | CMS | Halaman admin untuk mengelola produk dan pengajuan mitra. | `cms/` |
 
-Nama dan NPM penanggung jawab dicantumkan pada dokumentasi masing-masing. Arsip yang sudah tersedia: [Chrisna Fajar Arditha · 22312111](dokumentasi/ChrisnaFajarArditha_22312111/dokumentasi_fe.pdf).
+Nama dan NPM penanggung jawab dicantumkan pada dokumentasi masing-masing. Folder dokumentasi sudah disiapkan untuk Chrisna Fajar Arditha (22312111), Wijang Windhu Sn (22313015), dan Jois Romauli Simamarta (23312229).
 
 ## Struktur repository
 
 ```text
 glowdotexe/
-├── frontend/       # Aplikasi Next.js dan antarmuka pengguna
+├── frontend/       # Area pengembangan frontend
 ├── backend/        # Area pengembangan backend
 ├── cms/            # Area pengembangan CMS
 ├── dokumentasi/    # Laporan PDF setiap anggota
@@ -42,33 +42,33 @@ glowdotexe/
 └── README.md
 ```
 
-**Kondisi kode saat ini:** API, akses database, dan panel admin masih berada di aplikasi Next.js dalam `frontend/`. Route API ada di `frontend/src/app/api/`, panel admin di `frontend/src/app/admin/`, dan skema database di `frontend/supabase/schema.sql`. Folder `backend/` dan `cms/` saat ini berisi placeholder untuk pengembangan tim.
+**Kondisi kode saat ini:** `frontend/` dan `backend/` masing-masing hanya berisi `.gitkeep`. Setup dan implementasinya diserahkan kepada anggota yang bertanggung jawab. Proyek Next.js tersedia di `cms/`, berupa halaman awal pengembangan. Fitur produk di atas merupakan ruang lingkup yang akan dikerjakan tim.
 
-## Jalankan lokal
+## Mulai mengerjakan proyek
 
-Siapkan Node.js dan npm, lalu jalankan dari root repository:
+### Frontend
+
+Mulai proyek di folder `frontend/`. Penanggung jawab frontend menentukan setup, membangun halaman pengguna, dan mengintegrasikan API. Setelah setup selesai, tambahkan dependensi, lockfile, serta panduan menjalankan proyek ke repository.
+
+### Backend — API
+
+Mulai proyek di folder `backend/`. Backend hanya menyediakan API. Penanggung jawab backend menentukan framework, database, autentikasi, dan port server. Sepakati format request dan response dengan frontend serta CMS, lalu dokumentasikan endpoint dan cara menjalankan server.
+
+### CMS
+
+Gunakan Node.js 22 atau 24 dan npm. Dari root repository:
 
 ```bash
-cd frontend
+cd cms
 npm ci
 npm run dev
 ```
 
-Buka [localhost:3000](http://localhost:3000). Mode demo dapat dicoba tanpa konfigurasi tambahan.
+Buka http://localhost:3002. Mulai dari `cms/src/app/page.tsx` untuk halaman awal, `cms/src/app/layout.tsx` untuk layout, dan `cms/src/app/globals.css` untuk gaya global.
 
-Untuk mengaktifkan database, CMS, dan layanan AI, buat `frontend/.env.local` lalu isi sesuai layanan yang digunakan:
+CMS saat ini baru memiliki halaman awal dan belum terhubung ke API. Pengembangan fitur pengelolaan produk, mitra, serta login admin dilakukan di proyek ini. Simpan konfigurasi lokal di `cms/.env.local`; file tersebut diabaikan Git.
 
-```dotenv
-SUPABASE_URL=
-SUPABASE_SERVICE_ROLE_KEY=
-ADMIN_PASSWORD=
-ADMIN_SECRET=
-ANTHROPIC_API_KEY=
-```
-
-Jalankan skema di `frontend/supabase/schema.sql` melalui SQL Editor Supabase. Untuk login CMS, isi `ADMIN_PASSWORD` dan `ADMIN_SECRET` dengan teks acak minimal 16 karakter untuk secret, lalu buka `/admin/login`. Restart server setelah mengubah environment variable. Simpan kredensial di `.env.local`; file tersebut sudah dikecualikan dari Git.
-
-Panduan teknis aplikasi tersedia di [frontend/README.md](frontend/README.md).
+Panduan selengkapnya tersedia di [cms/README.md](cms/README.md).
 
 ## Alur kerja tim
 
@@ -82,12 +82,14 @@ Semua anggota bekerja langsung di branch `main` dan push ke `main`, tanpa membua
 
 Jika push ditolak karena ada commit baru dari anggota lain, ulangi pull dengan rebase lalu push kembali. Jangan gunakan force push ke `main`.
 
-Pemeriksaan aplikasi dijalankan dari folder `frontend/`:
+Untuk CMS, jalankan pemeriksaan berikut dari folder `cms/`. Script `lint` saat ini memeriksa tipe TypeScript:
 
 ```bash
 npm run lint
 npm run build
 ```
+
+Untuk menjalankan hasil build produksi CMS, gunakan `npm run start` dari folder yang sama. Server memakai port 3002. Panduan pemeriksaan frontend dan backend ditambahkan oleh penanggung jawab setelah setup.
 
 ## Dokumentasi pengerjaan
 
@@ -96,9 +98,11 @@ Setiap anggota membuat folder sendiri di dalam `dokumentasi/` dengan format **`N
 ```text
 dokumentasi/
 ├── ChrisnaFajarArditha_22312111/
-│   └── dokumentasi_fe.pdf
-└── NamaLengkap_NPM/
-    └── dokumentasi_backend.pdf
+│   └── .gitkeep
+├── WijangWindhuSn_22313015/
+│   └── .gitkeep
+└── JoisRomauliSimamarta_23312229/
+    └── .gitkeep
 ```
 
 Gunakan nama file sesuai bagian yang dikerjakan: `dokumentasi_fe.pdf`, `dokumentasi_backend.pdf`, atau `dokumentasi_cms.pdf`.
@@ -107,7 +111,7 @@ Isi laporan mencakup identitas anggota, bagian yang menjadi tanggung jawabnya, f
 
 ## Teknologi
 
-Next.js 15 · React 19 · TypeScript · Tailwind CSS 4 · Supabase PostgreSQL · Anthropic API
+CMS: Next.js 15 · React 19 · TypeScript. Teknologi frontend dan backend ditentukan oleh penanggung jawab masing-masing.
 
 ## Lisensi
 
