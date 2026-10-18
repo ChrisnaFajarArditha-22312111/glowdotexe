@@ -64,7 +64,7 @@ npm ci
 npm run dev
 ```
 
-Buka http://localhost:3002. Mulai dari `cms/src/app/page.tsx` untuk halaman awal, `cms/src/app/layout.tsx` untuk layout, dan `cms/src/app/globals.css` untuk gaya global.
+Buka alamat pada baris **Local** yang muncul di terminal setelah `npm run dev`. Saat pengembangan, Next.js memilih port yang tersedia jika port default sedang digunakan, jadi alamat dapat berbeda sesuai proyek yang dijalankan lebih dulu. Mulai dari `cms/src/app/page.tsx` untuk halaman awal, `cms/src/app/layout.tsx` untuk layout, dan `cms/src/app/globals.css` untuk gaya global.
 
 CMS saat ini baru memiliki halaman awal dan belum terhubung ke API. Pengembangan fitur pengelolaan produk, mitra, serta login admin dilakukan di proyek ini. Simpan konfigurasi lokal di `cms/.env.local`; file tersebut diabaikan Git.
 
@@ -89,7 +89,7 @@ npm run lint
 npm run build
 ```
 
-Untuk menjalankan hasil build produksi CMS, gunakan `npm run start` dari folder yang sama. Server memakai port 3002. Panduan pemeriksaan frontend dan backend ditambahkan oleh penanggung jawab setelah setup.
+Untuk menjalankan hasil build produksi CMS, gunakan `npm run start` dari folder yang sama. Alamat server ditampilkan di terminal. Jika menjalankan beberapa server produksi bersamaan, tentukan port yang tersedia lewat `npm run start -- --port <nomor-port>`. Panduan pemeriksaan frontend dan backend ditambahkan oleh penanggung jawab setelah setup.
 
 ## Dokumentasi pengerjaan
 

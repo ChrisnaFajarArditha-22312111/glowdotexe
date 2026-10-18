@@ -12,7 +12,7 @@ npm ci
 npm run dev
 ```
 
-Buka http://localhost:3002. Ubah `src/app/page.tsx` untuk halaman awal, `src/app/layout.tsx` untuk layout, dan `src/app/globals.css` untuk gaya global. Tambahkan halaman pengelolaan di `src/app/` sesuai kebutuhan.
+Buka alamat pada baris **Local** di terminal setelah `npm run dev`. Next.js memilih port yang tersedia saat pengembangan bila port default sudah digunakan, sehingga urutan menjalankan proyek tidak perlu ditentukan. Ubah `src/app/page.tsx` untuk halaman awal, `src/app/layout.tsx` untuk layout, dan `src/app/globals.css` untuk gaya global. Tambahkan halaman pengelolaan di `src/app/` sesuai kebutuhan.
 
 ## Integrasi
 
@@ -26,4 +26,4 @@ npm run build
 npm run start
 ```
 
-`lint` memeriksa tipe TypeScript. Server produksi memakai port 3002. Dokumentasikan hasil kerja sebagai PDF dalam folder `dokumentasi/NamaLengkap_NPM/`. Semua anggota commit dan push langsung ke `main` sesuai [panduan tim](../README.md#alur-kerja-tim).
+`lint` memeriksa tipe TypeScript. Alamat server ditampilkan di terminal. Untuk beberapa server produksi sekaligus, gunakan port yang tersedia melalui `npm run start -- --port <nomor-port>`. Dokumentasikan hasil kerja sebagai PDF dalam folder `dokumentasi/NamaLengkap_NPM/`. Semua anggota commit dan push langsung ke `main` sesuai [panduan tim](../README.md#alur-kerja-tim).
