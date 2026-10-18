@@ -1,6 +1,6 @@
 # Glowify
 
-### Kenali kulitmu. Temukan rutinitasmu.
+### Kenali kulitmu. Temukan Glow Terbaikmu..
 
 Glowify membantu pengguna memilih perawatan kulit lewat kuis singkat, katalog produk, dan percakapan dengan Glow AI. Pengguna bisa menjelajahi produk sesuai kebutuhan, menyimpan pilihan ke keranjang, atau mendaftar sebagai mitra.
 
