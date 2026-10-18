@@ -2,7 +2,7 @@
 
 ### Kenali kulitmu. Temukan Glow Terbaikmu..
 
-Glowify membantu pengguna memilih perawatan kulit lewat kuis singkat, katalog produk, dan percakapan dengan Glow AI. Pengguna bisa menjelajahi produk sesuai kebutuhan, menyimpan pilihan ke keranjang, atau mendaftar sebagai mitra.
+GLOWIFY adalah website skincare yang membantu pengguna memahami kebutuhan kulit mereka. Melalui fitur konsultasi AI, pengguna dapat memperoleh rekomendasi produk dan rutinitas perawatan kulit yang sesuai. Glowify dibuat untuk mengetahui perawatan kulit menjadi lebih mudah, praktis, dan personal. Selain itu, Glowify menyediakan fitur Skin Quiz untuk membantu mengenali jenis dan permasalahan kulit pengguna. Pengguna juga dapat menjelajahi katalog produk, melihat harga, serta menambahkan produk ke keranjang belanja.
 
 Proyek ini dikerjakan oleh tiga orang dengan fokus **frontend, backend, dan CMS**. Repository ini menjadi tempat pengembangan bersama sekaligus arsip dokumentasi pengerjaan setiap anggota.
 
