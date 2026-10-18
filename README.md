@@ -72,11 +72,15 @@ Panduan teknis aplikasi tersedia di [frontend/README.md](frontend/README.md).
 
 ## Alur kerja tim
 
-1. Ambil perubahan terbaru dari `main` sebelum mulai bekerja.
-2. Buat branch sesuai pekerjaan, misalnya `frontend/skin-quiz`, `backend/mitra-api`, atau `cms/kelola-produk`.
-3. Sepakati format request dan response sebelum mengintegrasikan frontend, backend, dan CMS.
-4. Buat commit yang menjelaskan perubahan, lalu ajukan pull request ke `main` untuk ditinjau anggota lain.
-5. Perbarui dokumentasi PDF saat ada hasil pengerjaan baru.
+Semua anggota bekerja langsung di branch `main` dan push ke `main`, tanpa membuat branch baru atau pull request.
+
+1. Jalankan `git switch main` dan `git pull --rebase origin main` sebelum mulai bekerja. Pastikan perubahan lokal sebelumnya sudah di-commit.
+2. Kerjakan bagian masing-masing. Koordinasikan perubahan pada file bersama dan sepakati format request serta response sebelum integrasi.
+3. Perbarui dokumentasi PDF saat ada hasil pengerjaan baru.
+4. Periksa perubahan dengan `git diff`, lalu tambahkan hanya file yang dikerjakan menggunakan `git add <path-file>` dan buat commit dengan pesan yang menjelaskan perubahan.
+5. Jalankan `git pull --rebase origin main` kembali sebelum `git push origin main` agar commit anggota lain ikut terbawa. Jika terjadi konflik, selesaikan lalu jalankan `git add <file-konflik>` dan `git rebase --continue` sebelum push.
+
+Jika push ditolak karena ada commit baru dari anggota lain, ulangi pull dengan rebase lalu push kembali. Jangan gunakan force push ke `main`.
 
 Pemeriksaan aplikasi dijalankan dari folder `frontend/`:
 
